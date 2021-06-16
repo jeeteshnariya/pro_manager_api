@@ -27,6 +27,9 @@ use App\Http\Controllers\API\AuthController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/login', [AuthController::class, 'login']);
+
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::post('/profile', [ProfileController::class, 'save']);
 Route::put('/profile/{id}', [ProfileController::class, 'update']);
