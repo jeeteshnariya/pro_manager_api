@@ -19,6 +19,7 @@ class AuthController extends Controller
 
             // if user found
             // msg user login succesfully
+            // send response email , token filed
             // if not
             // user not match error
 
