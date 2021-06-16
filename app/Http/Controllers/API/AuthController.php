@@ -4,17 +4,28 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-        return "hi";
+
+        $email = $request->email;
+        $password = $request->password;
+
+        if ($email && $password) {
+
+            // find user where email and password is match
+
+            // if user found
+            // msg user login succesfully
+            // if not
+            // user not match error
+
+        } else {
+
+            return response(["error" => "Please fill email and password!"], 401);
+        }
+
     }
 }
