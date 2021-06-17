@@ -28,8 +28,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/login', [AuthController::class, 'login']);
-
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::post('/profile', [ProfileController::class, 'save']);
 Route::put('/profile/{id}', [ProfileController::class, 'update']);
@@ -65,3 +63,6 @@ Route::get('/user', [UserController::class, 'index']);
 Route::post('/user', [UserController::class, 'save']);
 Route::put('/user/{id}', [UserController::class, 'update']);
 Route::delete('/user/{id}', [UserController::class, 'delete']);
+
+Route::post('/userpro', [AuthController::class, 'user']);
+Route::post('/login', [AuthController::class, 'login']);
