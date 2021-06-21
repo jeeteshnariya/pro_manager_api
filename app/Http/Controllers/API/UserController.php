@@ -11,6 +11,7 @@ class UserController extends Controller
     public function index()
     {
         $User = User::all();
+        
         //$User = User::factory()->count(10)->create();
         return response(['User' => $User, 'message' => 'data retrive successfully'],200);
     }
