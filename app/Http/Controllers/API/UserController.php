@@ -10,8 +10,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $User = User::all();
-        
+        //$User = User::all();
+        $User = User::with('profiles')->get();        
         //$User = User::factory()->count(10)->create();
         return response(['User' => $User, 'message' => 'data retrive successfully'],200);
     }
