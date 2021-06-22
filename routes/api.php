@@ -1,17 +1,15 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\FileController;
 use App\Http\Controllers\API\ProfileController;
 use App\Http\Controllers\API\ProjectController;
-use App\Http\Controllers\API\TaskController;
-use App\Http\Controllers\API\FileController;
 use App\Http\Controllers\API\RoleController;
-use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\TaskController;
 use App\Http\Controllers\API\UserController;
-use App\Http\Controllers\API\AuthController;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +20,7 @@ use App\Http\Controllers\API\AuthController;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -37,7 +35,6 @@ Route::get('/project', [ProjectController::class, 'index']);
 Route::post('/project', [ProjectController::class, 'save']);
 Route::put('/project/{id}', [ProjectController::class, 'update']);
 Route::delete('/project/{id}', [ProjectController::class, 'delete']);
-
 
 Route::get('/task', [TaskController::class, 'index']);
 Route::post('/task', [TaskController::class, 'save']);
@@ -59,10 +56,10 @@ Route::post('/category', [CategoryController::class, 'save']);
 Route::put('/category/{id}', [CategoryController::class, 'update']);
 Route::delete('/category/{id}', [CategoryController::class, 'delete']);
 
-Route::get('/user', [UserController::class, 'index']);
-Route::post('/user', [UserController::class, 'save']);
-Route::put('/user/{id}', [UserController::class, 'update']);
-Route::delete('/user/{id}', [UserController::class, 'delete']);
+Route::get('/users', [UserController::class, 'index']);
+Route::post('/users', [UserController::class, 'save']);
+Route::put('/users/{id}', [UserController::class, 'update']);
+Route::delete('/users/{id}', [UserController::class, 'delete']);
 
 Route::post('/userpro', [AuthController::class, 'user']);
 Route::post('/login', [AuthController::class, 'login']);
