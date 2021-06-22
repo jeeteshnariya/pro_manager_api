@@ -26,7 +26,8 @@ class DropRolePidInProfiles extends Migration
     public function down()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            //
+            $table->integer('role');
+            $table->integer('pid');
         });
     }
 }
