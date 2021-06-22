@@ -33,14 +33,15 @@ class ProfileFactory extends Factory
             'semester' => $this->faker->numberBetween($min = 1, $max = 6),
             'clgname' => $this->faker->company,
             'course' => "B.C.A",
-            'role' => 1,
-            'pid' => 1,
+            // 'role' => 1,
+            // 'pid' => 1,
             //'Qualification' => $this->faker->
             //'Technology' => $this->faker->
             'cover' => $this->faker->image(),
             'avtar' => $this->faker->emoji,
             //'status' => $this->faker->
-            'email' => $this->faker->safeEmail()
+            'email' => $this->faker->safeEmail(),
+            'user_id' => $this->faker->numberBetween($min = 1, $max = 50),
         ];
     }
 }
