@@ -15,7 +15,12 @@ class Profile extends Model
         'clgname', 'course', 'role',
         'pid', 'cover', 'avtar', 'email'];
 
-    protected $hidden = ['created_at', 'updated_at', 'user_id'];
+    protected $hidden = ['created_at', 'updated_at', 'user_id','address', 'city', 'state', 'country',];
 
-    
+    protected $appends = ['full_address'];
+
+    public function getFullAddressAttribute()
+    {
+        return $this->attributes[ 'address'].",".$this->attributes['city'].",".$this->attributes['state']."(".$this->attributes['country'].")";      
+    }   
 }
