@@ -21,6 +21,8 @@ class Profile extends Model
 
     public function getFullAddressAttribute()
     {
-        return $this->attributes['address'] . ', ' . $this->attributes['city'] . ', ' . $this->attributes['state'] . ' (' . $this->attributes['country'] . ' )';
+
+        return $this->attributes['address'] . "," . $this->attributes['city'] . "," . $this->attributes['state'] . "(" . $this->attributes['country'] . ")";
     }
+
 }
