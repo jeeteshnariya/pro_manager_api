@@ -32,6 +32,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'created_at',
+        'updated_at',
+        'email_verified_at'
     ];
 
     /**
@@ -52,4 +55,18 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id');
     }
+   
+    // public function getFullAddress()
+    // {
+    //     return "{$this->address} {$this->city} {$this->state} {$this->country}";
+    // }
+
+    // public function fulladdress()
+    // {
+    //     $address = profile::get();
+
+    //     foreach ($address as $key => $value) {
+    //         echo $value->getFullAddress;
+    //     }
+    // }
 }

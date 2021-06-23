@@ -12,6 +12,7 @@ class UserController extends Controller
     {
         //$User = User::all();
         $User = User::with(['profiles', 'roles'])->get();
+        $User['hello'] = 123;
         //$User = User::factory()->count(10)->create();
         return response(['User' => $User, 'message' => 'data retrive successfully'], 200);
     }

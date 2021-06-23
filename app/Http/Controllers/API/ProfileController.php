@@ -11,8 +11,6 @@ class ProfileController extends Controller
     public function index()
     {
         $profile = profile::all();
-        //$profile = profile::with('user_id')->get();
-        //$profile = profile::factory()->count(10)->create();
         return response(['faculty' => $profile, 'message' => 'data retrive successfully'], 200);
     }
     public function save(Request $request)
